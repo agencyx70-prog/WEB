@@ -30,8 +30,19 @@ export default function Footer() {
   };
 
   return (
-    <footer style={{ position: 'relative', zIndex: 2, borderTop: '1px solid var(--line)', paddingTop: '100px' }}>
-      <div className="container">
+    <footer style={{ position: 'relative', zIndex: 2, borderTop: '1px solid var(--line)', paddingTop: '100px', overflow: 'hidden' }}>
+      {/* Radial gradient backdrop — black at top (blends with page), red glow toward the bottom */}
+      <div
+        aria-hidden
+        style={{
+          position: 'absolute',
+          inset: 0,
+          zIndex: 0,
+          pointerEvents: 'none',
+          background: 'radial-gradient(125% 125% at 50% 8%, var(--bg) 42%, #5c0a0d 100%)',
+        }}
+      />
+      <div className="container" style={{ position: 'relative', zIndex: 1 }}>
         {/* Big CTA */}
         <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8, ease }}>
           <span className="kicker" style={{ marginBottom: '28px', display: 'inline-flex' }}>Start a project</span>

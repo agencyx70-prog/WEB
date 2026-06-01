@@ -130,6 +130,9 @@ button {
   -webkit-backdrop-filter: var(--glass-blur);
   border: 1px solid var(--glass-border);
   border-radius: 18px;
+  /* anti-flicker: avoid backface repaint without disturbing backdrop-filter */
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
 }
 
 /* ---------- Type helpers ---------- */
@@ -310,4 +313,44 @@ button {
 }
 .team-cross {
   animation: cross-spin 6s linear infinite;
+}
+
+/* ---------- Ambient drifting blur orbs ---------- */
+.orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(120px);
+  will-change: transform;
+}
+
+/* Mobile: lighten the heaviest blur effects so everything stays smooth */
+@media (max-width: 768px) {
+  .orb { filter: blur(70px); opacity: 0.5; }
+  .prog-blur__layers { display: none; }
+}
+@keyframes orbDrift1 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(48px, -36px) scale(1.08); }
+}
+@keyframes orbDrift2 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(-54px, 44px) scale(0.94); }
+}
+@keyframes orbDrift3 {
+  0%, 100% { transform: translate(0, 0); }
+  50% { transform: translate(36px, 50px); }
+}
+
+/* ---------- Stronger frosted glass variant ---------- */
+.glass-strong {
+  background: rgba(18, 15, 14, 0.6);
+  backdrop-filter: blur(30px) saturate(140%);
+  -webkit-backdrop-filter: blur(30px) saturate(140%);
+  border: 1px solid var(--glass-border);
+}
+
+/* ---------- Horizontal edge fade mask (marquee, scrollers) ---------- */
+.edge-fade-x {
+  -webkit-mask-image: linear-gradient(to right, transparent, #000 9%, #000 91%, transparent);
+  mask-image: linear-gradient(to right, transparent, #000 9%, #000 91%, transparent);
 }

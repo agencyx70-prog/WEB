@@ -198,6 +198,8 @@ export default function CardStack({
                     cursor: 'none',
                     userSelect: 'none',
                     willChange: 'transform',
+                    backfaceVisibility: 'hidden',
+                    WebkitBackfaceVisibility: 'hidden',
                   }}
                   initial={reduceMotion ? false : { opacity: 0, x, y: y + 40, rotateZ, rotateX, scale: sc }}
                   animate={{ opacity: 1, x, y: y + lift, rotateZ, rotateX, scale: sc }}

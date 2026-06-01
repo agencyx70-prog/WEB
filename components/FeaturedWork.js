@@ -2,6 +2,7 @@
 import { motion } from 'framer-motion';
 import { SquareArrowOutUpRight } from 'lucide-react';
 import CardStack from './CardStack';
+import ShaderBackground from './ShaderBackground';
 
 const ease = [0.22, 1, 0.36, 1];
 
@@ -93,8 +94,11 @@ function ProjectCover(item, { active }) {
 
 export default function FeaturedWork() {
   return (
-    <section className="section" style={{ overflow: 'hidden' }}>
-      <div className="container">
+    <section className="section" style={{ position: 'relative', overflow: 'hidden' }}>
+      {/* Red shader animation background — faded at the edges */}
+      <ShaderBackground />
+
+      <div className="container" style={{ position: 'relative', zIndex: 1 }}>
         <div style={{ textAlign: 'center', marginBottom: '56px' }}>
           <motion.span initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} className="kicker" style={{ marginBottom: '22px' }}>
             Featured Work

@@ -2,6 +2,7 @@
 import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion';
 import { ArrowUpRight } from 'lucide-react';
 import { useState } from 'react';
+import SmokeBackground from './SmokeBackground';
 
 const ease = [0.22, 1, 0.36, 1];
 
@@ -93,7 +94,7 @@ function ProjectCard({ p, i }) {
       onMouseEnter={() => setHover(true)}
       onMouseLeave={() => { setHover(false); x.set(0); y.set(0); }}
       className="glass"
-      style={{ display: 'block', rotateX, rotateY, transformStyle: 'preserve-3d', overflow: 'hidden', cursor: 'none' }}
+      style={{ display: 'block', rotateX, rotateY, transformStyle: 'preserve-3d', overflow: 'hidden', cursor: 'none', willChange: 'transform', backfaceVisibility: 'hidden', WebkitBackfaceVisibility: 'hidden' }}
     >
       {/* brand preview panel */}
       <div style={{ position: 'relative', height: '200px', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: '12px', borderBottom: '1px solid var(--line)', overflow: 'hidden', background: 'linear-gradient(180deg, rgba(0,0,0,0.2), rgba(0,0,0,0.45))' }}>
@@ -134,9 +135,15 @@ function ProjectCard({ p, i }) {
 }
 
 export default function PastWorks() {
+  const smokeMask = 'radial-gradient(ellipse 90% 80% at 50% 50%, rgba(0,0,0,1) 30%, rgba(0,0,0,0.5) 62%, rgba(0,0,0,0) 100%)';
   return (
-    <section id="work" className="section">
-      <div className="container">
+    <section id="work" className="section" style={{ position: 'relative', overflow: 'hidden' }}>
+      {/* Red smoke shader background — faded at the edges */}
+      <div aria-hidden style={{ position: 'absolute', inset: 0, zIndex: 0, pointerEvents: 'none', opacity: 0.55, maskImage: smokeMask, WebkitMaskImage: smokeMask }}>
+        <SmokeBackground smokeColor="#ff2b2b" />
+      </div>
+
+      <div className="container" style={{ position: 'relative', zIndex: 1 }}>
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', flexWrap: 'wrap', gap: '24px', marginBottom: '64px' }}>
           <div>
             <motion.span initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} className="kicker" style={{ marginBottom: '24px', display: 'inline-flex' }}>

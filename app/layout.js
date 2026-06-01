@@ -4,6 +4,9 @@ import ScrollProgress from "../components/ScrollProgress";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import CustomCursor from "../components/CustomCursor";
+import FloatingAiAssistant from "../components/FloatingAiAssistant";
+import AmbientBlur from "../components/AmbientBlur";
+import ProgressiveBlur from "../components/ProgressiveBlur";
 
 const bricolage = Bricolage_Grotesque({
   variable: "--font-bricolage",
@@ -44,12 +47,15 @@ export default function RootLayout({ children }) {
     <html lang="en" className={`${bricolage.variable} ${hanken.variable} ${mono.variable}`}>
       <body>
         <div className="bg-glow" />
+        <AmbientBlur />
         <div className="grain-overlay" />
         <CustomCursor />
         <ScrollProgress />
+        <ProgressiveBlur position="top" />
         <Navbar />
         {children}
         <Footer />
+        <FloatingAiAssistant />
       </body>
     </html>
   );

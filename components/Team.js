@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { useState } from 'react';
 import CardStack from './CardStack';
 import TeamMemberModal from './TeamMemberModal';
+import ShaderBackground from './ShaderBackground';
 
 const ease = [0.22, 1, 0.36, 1];
 
@@ -11,11 +12,11 @@ const ease = [0.22, 1, 0.36, 1];
 const team = [
   { id: 'vamshi', title: 'Vamshi Krishna', role: 'Founder & Developer', initials: 'VK', img: 'Vamshikrishna.jpeg', bio: 'Founder and lead developer. Builds restaurant sites, e-commerce platforms, and digital menus end-to-end, and drives the studio’s AI-automation work.' },
   { id: 'siri', title: 'Siri Goud', role: 'Finance Manager', initials: 'SG', img: 'siri.jpeg', bio: 'Keeps the studio healthy — budgeting, finances, and financial planning across every project.' },
-  { id: 'praneet', title: 'Praneet Yadav', role: 'Content Creator', initials: 'PY', img: 'Praneet.jpeg', bio: 'Shapes how the studio looks and sounds — visual content and social presence.' },
+  { id: 'praneet', title: 'Praneet Yadav', role: 'Content Manager', initials: 'PY', img: 'Praneet.jpeg', bio: 'Plans and oversees the studio’s content and social presence end-to-end.' },
   { id: 'kaushik', title: 'Kaushik Varma', role: 'Video Editor', initials: 'KV', img: 'kaushik.jpeg', bio: 'Turns raw footage into story — video editing and content for digital platforms.' },
-  { id: 'mounika', title: 'Mounika', role: 'Team Member', initials: 'MO', img: 'Mounika.jpeg', bio: 'Supports the team across design and day-to-day operations.' },
-  { id: 'mohanasai', title: 'Mohana Sai', role: 'Team Member', initials: 'MS', img: 'mohana sai.jpeg', bio: 'Supports the team across content and day-to-day operations.' },
-  { id: 'akshith', title: 'Akshith Devaraya', role: 'Business Development', initials: 'AD', img: null, bio: 'Opens doors — business strategy, market research, and client relationships.' },
+  { id: 'mounika', title: 'Mounika', role: 'Content Creator', initials: 'MO', img: 'Mounika.jpeg', bio: 'Creates visual content and social media assets for our projects.' },
+  { id: 'mohanasai', title: 'Mohana Sai', role: 'Content Creator', initials: 'MS', img: 'mohana sai.jpeg', bio: 'Creates visual content and social media assets for our projects.' },
+  { id: 'akshith', title: 'Akshith Devaraya', role: 'Business Development', initials: 'AD', img: 'Akshith.jpeg', bio: 'Opens doors — business strategy, market research, and client relationships.' },
 ];
 
 function TeamCard({ item, active }) {
@@ -79,8 +80,11 @@ export default function Team() {
   const [openIndex, setOpenIndex] = useState(null);
 
   return (
-    <section id="team" className="section" style={{ overflow: 'hidden' }}>
-      <div className="container">
+    <section id="team" className="section" style={{ position: 'relative', overflow: 'hidden' }}>
+      {/* Red shader animation background — faded at the edges */}
+      <ShaderBackground />
+
+      <div className="container" style={{ position: 'relative', zIndex: 1 }}>
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', flexWrap: 'wrap', gap: '24px', marginBottom: '56px' }}>
           <div>
             <motion.span initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} className="kicker" style={{ marginBottom: '24px', display: 'inline-flex' }}>

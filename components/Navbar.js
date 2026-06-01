@@ -37,10 +37,6 @@ export default function Navbar() {
           zIndex: 1000,
           padding: scrolled ? '14px 0' : '24px 0',
           transition: 'padding 0.4s var(--ease)',
-          background: scrolled
-            ? 'linear-gradient(to bottom, rgba(10,9,8,0.85), rgba(10,9,8,0))'
-            : 'transparent',
-          backdropFilter: scrolled ? 'blur(10px)' : 'none',
         }}
       >
         <nav className="container" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>

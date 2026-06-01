@@ -2,6 +2,7 @@
 import { motion } from 'framer-motion';
 import { Check, ArrowRight } from 'lucide-react';
 import Link from 'next/link';
+import DottedSurface from './DottedSurface';
 
 const ease = [0.22, 1, 0.36, 1];
 
@@ -28,9 +29,15 @@ const plans = [
 ];
 
 export default function Packages() {
+  const dotMask = 'radial-gradient(ellipse 92% 82% at 50% 45%, rgba(0,0,0,1) 30%, rgba(0,0,0,0.5) 64%, rgba(0,0,0,0) 100%)';
   return (
-    <section id="packages" className="section">
-      <div className="container">
+    <section id="packages" className="section" style={{ position: 'relative', overflow: 'hidden' }}>
+      {/* Dotted wave surface background — faded at the edges */}
+      <div aria-hidden style={{ position: 'absolute', inset: 0, zIndex: 0, pointerEvents: 'none', opacity: 0.55, maskImage: dotMask, WebkitMaskImage: dotMask }}>
+        <DottedSurface color="#ff2b2b" opacity={0.5} />
+      </div>
+
+      <div className="container" style={{ position: 'relative', zIndex: 1 }}>
         <div style={{ textAlign: 'center', marginBottom: '72px' }}>
           <motion.span initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} className="kicker" style={{ marginBottom: '24px' }}>
             Pricing

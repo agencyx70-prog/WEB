@@ -5,7 +5,7 @@ export default function MarqueeBanner() {
   const loop = [...items, ...items];
 
   return (
-    <div style={{ position: 'relative', borderTop: '1px solid var(--line)', borderBottom: '1px solid var(--line)', padding: '34px 0', overflow: 'hidden', zIndex: 2 }}>
+    <div className="edge-fade-x" style={{ position: 'relative', borderTop: '1px solid var(--line)', borderBottom: '1px solid var(--line)', padding: '34px 0', overflow: 'hidden', zIndex: 2 }}>
       <div style={{ display: 'flex', width: 'max-content', animation: 'marquee 32s linear infinite' }}>
         {loop.map((item, i) => (
           <div key={i} style={{ display: 'inline-flex', alignItems: 'center', gap: '40px', paddingRight: '40px' }}>
