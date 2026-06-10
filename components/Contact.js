@@ -6,7 +6,7 @@ import { useState } from 'react';
 const ease = [0.22, 1, 0.36, 1];
 
 const info = [
-  { icon: <Mail size={16} />, label: 'Email', value: 'hello@thesevenz.com' },
+  { icon: <Mail size={16} />, label: 'Email', value: 'agencyx70@gmail.com' },
   { icon: <Phone size={16} />, label: 'Phone', value: '+91 94914 64007' },
   { icon: <MapPin size={16} />, label: 'Studio', value: 'Telangana, India · Remote' },
 ];
@@ -148,7 +148,7 @@ export default function Contact() {
                     <button
                       type="button"
                       onClick={() => setOpen(!open)}
-                      style={{ ...fieldStyle, height: '58px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', textAlign: 'left', borderColor: errors.budget ? 'var(--red)' : 'var(--line)', paddingTop: '8px', cursor: 'none' }}
+                      style={{ ...fieldStyle, height: '58px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', textAlign: 'left', borderColor: errors.budget ? 'var(--red)' : 'var(--line)', paddingTop: '8px', cursor: 'pointer' }}
                     >
                       <span style={{ color: form.budget ? 'var(--fg)' : 'var(--faint)', fontSize: form.budget ? '15px' : '14px', fontFamily: form.budget ? 'var(--font-body)' : 'var(--font-mono)', letterSpacing: form.budget ? '0' : '0' }}>
                         {form.budget || 'What do you need?'}
@@ -170,7 +170,7 @@ export default function Contact() {
                               key={opt}
                               type="button"
                               onClick={() => { setForm({ ...form, budget: opt }); setErrors({ ...errors, budget: '' }); setOpen(false); }}
-                              style={{ width: '100%', textAlign: 'left', padding: '14px 16px', fontSize: '14px', color: 'var(--fg)', borderBottom: i < budgetOptions.length - 1 ? '1px solid var(--line)' : 'none', cursor: 'none', transition: 'background 0.2s' }}
+                              style={{ width: '100%', textAlign: 'left', padding: '14px 16px', fontSize: '14px', color: 'var(--fg)', borderBottom: i < budgetOptions.length - 1 ? '1px solid var(--line)' : 'none', cursor: 'pointer', transition: 'background 0.2s' }}
                               onMouseEnter={(e) => (e.currentTarget.style.background = 'rgba(255,43,43,0.08)')}
                               onMouseLeave={(e) => (e.currentTarget.style.background = 'transparent')}
                             >

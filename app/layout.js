@@ -3,8 +3,8 @@ import "./globals.css";
 import ScrollProgress from "../components/ScrollProgress";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
-import CustomCursor from "../components/CustomCursor";
 import FloatingAiAssistant from "../components/FloatingAiAssistant";
+import FloatingWhatsApp from "../components/FloatingWhatsApp";
 import AmbientBlur from "../components/AmbientBlur";
 import ProgressiveBlur from "../components/ProgressiveBlur";
 
@@ -30,6 +30,7 @@ const mono = JetBrains_Mono({
 });
 
 export const metadata = {
+  metadataBase: new URL("https://thesevenz.com"),
   title: "TheSevenZ — Content, Video, Social & Web",
   description:
     "TheSevenZ — a creative studio for content creation, video editing, social media management, brand deals, and web. Start small, dream big.",
@@ -49,13 +50,13 @@ export default function RootLayout({ children }) {
         <div className="bg-glow" />
         <AmbientBlur />
         <div className="grain-overlay" />
-        <CustomCursor />
         <ScrollProgress />
         <ProgressiveBlur position="top" />
         <Navbar />
         {children}
         <Footer />
         <FloatingAiAssistant />
+        <FloatingWhatsApp />
       </body>
     </html>
   );

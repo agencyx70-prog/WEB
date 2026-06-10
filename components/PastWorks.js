@@ -94,7 +94,7 @@ function ProjectCard({ p, i }) {
       onMouseEnter={() => setHover(true)}
       onMouseLeave={() => { setHover(false); x.set(0); y.set(0); }}
       className="glass"
-      style={{ display: 'block', rotateX, rotateY, transformStyle: 'preserve-3d', overflow: 'hidden', cursor: 'none', willChange: 'transform', backfaceVisibility: 'hidden', WebkitBackfaceVisibility: 'hidden' }}
+      style={{ display: 'block', rotateX, rotateY, transformStyle: 'preserve-3d', overflow: 'hidden', cursor: 'pointer', willChange: 'transform', backfaceVisibility: 'hidden', WebkitBackfaceVisibility: 'hidden' }}
     >
       {/* brand preview panel */}
       <div style={{ position: 'relative', height: '200px', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: '12px', borderBottom: '1px solid var(--line)', overflow: 'hidden', background: 'linear-gradient(180deg, rgba(0,0,0,0.2), rgba(0,0,0,0.45))' }}>

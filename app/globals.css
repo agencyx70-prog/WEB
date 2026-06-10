@@ -50,12 +50,6 @@ body {
   font-family: var(--font-body);
   line-height: 1.6;
   overflow-x: hidden;
-  cursor: none;
-}
-
-/* Hide custom cursor fallback on touch */
-@media (hover: none) {
-  body { cursor: auto; }
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -76,7 +70,7 @@ button {
   font-family: inherit;
   border: none;
   background: none;
-  cursor: none;
+  cursor: pointer;
 }
 
 /* ---------- Atmosphere: grain + red glow ---------- */
@@ -297,6 +291,89 @@ button {
 @keyframes marquee {
   from { transform: translateX(0); }
   to { transform: translateX(-50%); }
+}
+
+/* ---------- Floating WhatsApp button ---------- */
+.wa-fab {
+  position: fixed;
+  bottom: 24px;
+  left: 24px;
+  z-index: 9000;
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #25d366;
+  color: #fff;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+  animation: waPulse 2.8s ease-in-out infinite;
+  transition: transform 0.3s var(--ease);
+}
+.wa-fab:hover { transform: scale(1.08); }
+.wa-fab svg { width: 30px; height: 30px; }
+@keyframes waPulse {
+  0% { box-shadow: 0 8px 24px rgba(0,0,0,0.4), 0 0 0 0 rgba(37,211,102,0.45); }
+  70% { box-shadow: 0 8px 24px rgba(0,0,0,0.4), 0 0 0 14px rgba(37,211,102,0); }
+  100% { box-shadow: 0 8px 24px rgba(0,0,0,0.4), 0 0 0 0 rgba(37,211,102,0); }
+}
+@media (max-width: 600px) {
+  .wa-fab { width: 50px; height: 50px; bottom: 20px; left: 20px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .wa-fab { animation: none; }
+}
+
+/* ---------- Animated color orb (AI assistant) ---------- */
+@property --angle {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 0deg;
+}
+.color-orb {
+  display: grid;
+  grid-template-areas: "stack";
+  overflow: hidden;
+  border-radius: 50%;
+  position: relative;
+  transform: scale(1.1);
+}
+.color-orb::before,
+.color-orb::after {
+  content: "";
+  display: block;
+  grid-area: stack;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  transform: translateZ(0);
+}
+.color-orb::before {
+  background:
+    conic-gradient(from calc(var(--angle) * 2) at 25% 70%, var(--accent3), transparent 20% 80%, var(--accent3)),
+    conic-gradient(from calc(var(--angle) * 2) at 45% 75%, var(--accent2), transparent 30% 60%, var(--accent2)),
+    conic-gradient(from calc(var(--angle) * -3) at 80% 20%, var(--accent1), transparent 40% 60%, var(--accent1)),
+    conic-gradient(from calc(var(--angle) * 2) at 15% 5%, var(--accent2), transparent 10% 90%, var(--accent2)),
+    conic-gradient(from calc(var(--angle) * 1) at 20% 80%, var(--accent1), transparent 10% 90%, var(--accent1)),
+    conic-gradient(from calc(var(--angle) * -2) at 85% 10%, var(--accent3), transparent 20% 80%, var(--accent3));
+  box-shadow: inset var(--base) 0 0 var(--shadow) calc(var(--shadow) * 0.2);
+  filter: blur(var(--blur)) contrast(var(--contrast));
+  animation: orbSpin var(--spin-duration) linear infinite;
+}
+.color-orb::after {
+  background-image: radial-gradient(circle at center, var(--base) var(--dot), transparent var(--dot));
+  background-size: calc(var(--dot) * 2) calc(var(--dot) * 2);
+  backdrop-filter: blur(calc(var(--blur) * 2)) contrast(calc(var(--contrast) * 2));
+  mix-blend-mode: overlay;
+}
+.color-orb[style*="--mask: 0%"]::after { mask-image: none; }
+.color-orb:not([style*="--mask: 0%"])::after {
+  mask-image: radial-gradient(black var(--mask), transparent 75%);
+}
+@keyframes orbSpin { to { --angle: 360deg; } }
+@media (prefers-reduced-motion: reduce) {
+  .color-orb::before { animation: none; }
 }
 
 /* ---------- Team card animated backgrounds (ported) ---------- */

@@ -195,7 +195,7 @@ export default function CardStack({
                     overflow: 'hidden',
                     boxShadow: isActive ? '0 30px 70px rgba(0,0,0,0.55)' : '0 16px 40px rgba(0,0,0,0.4)',
                     transformStyle: 'preserve-3d',
-                    cursor: 'none',
+                    cursor: isActive ? 'grab' : 'pointer',
                     userSelect: 'none',
                     willChange: 'transform',
                     backfaceVisibility: 'hidden',
@@ -233,7 +233,7 @@ export default function CardStack({
                     borderRadius: 9999,
                     background: on ? 'var(--red)' : 'var(--line-strong)',
                     transition: 'all 0.4s var(--ease)',
-                    cursor: 'none',
+                    cursor: 'pointer',
                   }}
                 />
               );
