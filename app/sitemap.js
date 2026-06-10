@@ -1,4 +1,4 @@
-const SITE = 'https://thesevenz.com';
+const SITE = 'https://www.thesevenz.com';
 
 export default function sitemap() {
   const now = new Date();

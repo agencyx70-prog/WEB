@@ -30,17 +30,23 @@ const mono = JetBrains_Mono({
 });
 
 export const metadata = {
-  metadataBase: new URL("https://thesevenz.com"),
+  metadataBase: new URL("https://www.thesevenz.com"),
   title: "TheSevenZ — Content, Video, Social & Web",
   description:
     "TheSevenZ — a creative studio for content creation, video editing, social media management, brand deals, and web. Start small, dream big.",
   keywords: "content creation, video editing, social media management, brand deals, web design, creative studio",
+  alternates: { canonical: "/" },
   openGraph: {
     title: "TheSevenZ — Content, Video, Social & Web",
     description:
       "A creative studio for content creation, video editing, social media management, brand deals, and web.",
+    url: "https://www.thesevenz.com",
+    siteName: "TheSevenZ",
     type: "website",
   },
+  robots: { index: true, follow: true },
+  // After verifying in Google Search Console, paste the code here:
+  // verification: { google: "your-verification-code" },
 };
 
 export default function RootLayout({ children }) {
