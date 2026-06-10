@@ -2,7 +2,7 @@
 import { useState, useRef, useEffect } from 'react';
 import { Send, Bot, X, Info } from 'lucide-react';
 
-const GREETING = { role: 'assistant', content: "Hi! I'm the AGENCY.X assistant. Ask me about our services, pricing, or projects — or say hello." };
+const GREETING = { role: 'assistant', content: "Hi! I'm the TheSevenZ assistant. Ask me about our services, pricing, or projects — or say hello." };
 const MAX = 2000;
 
 export default function FloatingAiAssistant() {

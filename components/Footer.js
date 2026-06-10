@@ -60,10 +60,10 @@ export default function Footer() {
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: '48px', marginBottom: '72px' }}>
           <div style={{ gridColumn: 'span 1' }}>
             <div style={{ fontFamily: 'var(--font-display)', fontSize: '24px', fontWeight: 700, marginBottom: '16px' }}>
-              AGENCY<span style={{ color: 'var(--red)' }}>.X</span>
+              TheSeven<span style={{ color: 'var(--red)' }}>Z</span>
             </div>
             <p className="text-muted" style={{ fontSize: '14px', lineHeight: 1.7, maxWidth: '240px' }}>
-              A new agency building beautiful websites for businesses. Starting small, dreaming big.
+              A creative studio for content, video, social, and web. Starting small, dreaming big.
             </p>
           </div>
 
@@ -101,7 +101,7 @@ export default function Footer() {
         <div className="hairline" style={{ marginBottom: '28px' }} />
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '16px', paddingBottom: '40px' }}>
           <span style={{ fontFamily: 'var(--font-mono)', fontSize: '11px', letterSpacing: '0.06em', color: 'var(--faint)' }}>
-            © {new Date().getFullYear()} AGENCY.X — Telangana, India
+            © {new Date().getFullYear()} TheSevenZ — Telangana, India
           </span>
           <div style={{ display: 'flex', gap: '8px' }}>
             {socials.map((s) => (

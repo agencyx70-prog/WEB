@@ -6,12 +6,12 @@ import { useState } from 'react';
 const ease = [0.22, 1, 0.36, 1];
 
 const info = [
-  { icon: <Mail size={16} />, label: 'Email', value: 'hello@agencyx.com' },
+  { icon: <Mail size={16} />, label: 'Email', value: 'hello@thesevenz.com' },
   { icon: <Phone size={16} />, label: 'Phone', value: '+91 94914 64007' },
   { icon: <MapPin size={16} />, label: 'Studio', value: 'Telangana, India · Remote' },
 ];
 
-const budgetOptions = ['₹15,000 — Basic', '₹30,000 — Standard', '₹50,000 — E-Commerce', 'Custom / Not sure'];
+const budgetOptions = ['Content Creation', 'Video Editing', 'Social Media Management', 'Brand Deals', 'Website / Other'];
 
 const fieldStyle = {
   width: '100%',
@@ -78,7 +78,7 @@ export default function Contact() {
     const er = {};
     if (form.name.trim().length < 2) er.name = 'Enter your name';
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email)) er.email = 'Valid email required';
-    if (!form.budget) er.budget = 'Select a budget';
+    if (!form.budget) er.budget = 'Select a service';
     if (form.message.trim().length < 10) er.message = 'Tell us a bit more';
     setErrors(er);
     return Object.keys(er).length === 0;
@@ -151,7 +151,7 @@ export default function Contact() {
                       style={{ ...fieldStyle, height: '58px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', textAlign: 'left', borderColor: errors.budget ? 'var(--red)' : 'var(--line)', paddingTop: '8px', cursor: 'none' }}
                     >
                       <span style={{ color: form.budget ? 'var(--fg)' : 'var(--faint)', fontSize: form.budget ? '15px' : '14px', fontFamily: form.budget ? 'var(--font-body)' : 'var(--font-mono)', letterSpacing: form.budget ? '0' : '0' }}>
-                        {form.budget || 'Budget Range'}
+                        {form.budget || 'What do you need?'}
                       </span>
                       <motion.span animate={{ rotate: open ? 180 : 0 }} style={{ color: 'var(--muted)' }}><ChevronDown size={16} /></motion.span>
                     </button>

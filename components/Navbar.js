@@ -41,7 +41,7 @@ export default function Navbar() {
       >
         <nav className="container" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
           <Link href="/" style={{ display: 'flex', alignItems: 'baseline', gap: '2px', fontFamily: 'var(--font-display)', fontSize: '22px', fontWeight: 700, letterSpacing: '-0.03em' }}>
-            AGENCY<span style={{ color: 'var(--red)' }}>.X</span>
+            TheSeven<span style={{ color: 'var(--red)' }}>Z</span>
           </Link>
 
           {/* Desktop */}

@@ -31,7 +31,7 @@ export default function PageTransition({ children }) {
               transition={{ duration: 0.5 }}
               style={{ fontFamily: 'var(--font-display)', fontSize: '34px', fontWeight: 700, letterSpacing: '-0.03em' }}
             >
-              AGENCY<span style={{ color: 'var(--red)' }}>.X</span>
+              TheSeven<span style={{ color: 'var(--red)' }}>Z</span>
             </motion.div>
           </motion.div>
         )}

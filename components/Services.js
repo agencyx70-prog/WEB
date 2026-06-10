@@ -5,30 +5,34 @@ import { useState } from 'react';
 
 const services = [
   {
+    title: 'Content Creation',
+    desc: 'Scroll-stopping photo and video content, graphics, and concepts tailored to your brand.',
+    tags: ['Photography', 'Video', 'Graphics', 'Concepts'],
+  },
+  {
+    title: 'Video Editing',
+    desc: 'Reels, shorts, and long-form edits with motion graphics, captions, and sound design.',
+    tags: ['Reels & Shorts', 'Long-form', 'Motion Graphics', 'Sound Design'],
+  },
+  {
+    title: 'Social Media Management',
+    desc: 'End-to-end account management — strategy, posting, community, and steady growth.',
+    tags: ['Strategy', 'Scheduling', 'Community', 'Analytics'],
+  },
+  {
+    title: 'Brand Deals',
+    desc: 'We connect creators with brands and manage partnerships from outreach to reporting.',
+    tags: ['Outreach', 'Negotiation', 'Campaigns', 'Reporting'],
+  },
+  {
     title: 'Website Design',
-    desc: 'Custom, responsive websites for restaurants, e-commerce, and small businesses. Modern and user-friendly.',
+    desc: 'Custom, responsive websites for restaurants, e-commerce, and small businesses.',
     tags: ['Restaurant Sites', 'E-commerce', 'Digital Menus', 'Business Sites'],
   },
   {
     title: 'AI Automations',
-    desc: 'Put your busywork on autopilot. We build chatbots, lead-capture flows, and AI integrations that save hours every week.',
-    tags: ['AI Chatbots', 'Workflow Automation', 'Lead Capture', 'API Integrations'],
-  },
-  {
-    title: 'Branding & Identity',
-    desc: 'Logos, colour systems, and visual guidelines that make your business look established from day one.',
-    tags: ['Logo Design', 'Brand Guidelines', 'Visual Identity'],
-  },
-  {
-    title: 'SEO & Performance',
-    desc: 'Get found and load fast. On-page SEO and speed tuning so customers reach you first.',
-    tags: ['On-page SEO', 'Core Web Vitals', 'Analytics'],
-  },
-  {
-    title: 'Digital Marketing',
-    desc: 'Social media and content creation to grow your business online.',
-    tags: ['Instagram', 'Content', 'Strategy'],
-    soon: true,
+    desc: 'Chatbots, lead-capture flows, and AI integrations that save hours every week.',
+    tags: ['AI Chatbots', 'Workflow', 'Lead Capture', 'API Integrations'],
   },
 ];
 
@@ -114,7 +118,7 @@ export default function Services() {
             </motion.h2>
           </div>
           <p className="text-muted" style={{ fontSize: '15px', maxWidth: '320px', lineHeight: 1.7 }}>
-            From concept to launch — end-to-end solutions that accelerate your brand online.
+            Content, video, social, and web — everything your brand needs to grow online.
           </p>
         </div>
 

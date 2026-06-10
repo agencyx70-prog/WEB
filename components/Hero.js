@@ -75,8 +75,8 @@ export default function Hero() {
           style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', flexWrap: 'wrap', gap: '32px', marginBottom: '64px' }}
         >
           <p className="text-muted" style={{ fontSize: '17px', maxWidth: '440px', lineHeight: 1.7 }}>
-            We build beautiful, affordable websites for restaurants, e-commerce, and small
-            businesses — crafted with care, shipped with intent.
+            A creative studio for content, video, social, and web — we help brands and
+            creators grow with work crafted with care and shipped with intent.
           </p>
           <div style={{ display: 'flex', gap: '14px', flexWrap: 'wrap' }}>
             <Link href="/work" className="btn btn-fill"><span>View Work</span></Link>

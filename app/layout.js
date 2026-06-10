@@ -30,14 +30,14 @@ const mono = JetBrains_Mono({
 });
 
 export const metadata = {
-  title: "AGENCY.X — Affordable Web Design for Startups",
+  title: "TheSevenZ — Content, Video, Social & Web",
   description:
-    "A new agency building beautiful, affordable websites for restaurants, e-commerce, and small businesses. Start small, dream big.",
-  keywords: "web design, affordable websites, restaurant website, e-commerce, startup",
+    "TheSevenZ — a creative studio for content creation, video editing, social media management, brand deals, and web. Start small, dream big.",
+  keywords: "content creation, video editing, social media management, brand deals, web design, creative studio",
   openGraph: {
-    title: "AGENCY.X — Affordable Web Design for Startups",
+    title: "TheSevenZ — Content, Video, Social & Web",
     description:
-      "A new agency building beautiful, affordable websites for restaurants, e-commerce, and small businesses.",
+      "A creative studio for content creation, video editing, social media management, brand deals, and web.",
     type: "website",
   },
 };
